@@ -4,7 +4,7 @@ module Destructor::CoreExt::Class
 
     object = super
 
-    if object.__send__(:methods).include?(:finalize)
+    if object.respond_to?(:finalize)
       ::ObjectSpace.define_finalizer( object, proc { object.__send__(:finalize) } )
     end
 
