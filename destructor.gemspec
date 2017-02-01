@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Destructor::VERSION
   spec.authors       = ['Adam Luzsi']
   spec.email         = ['adamluzsi@gmail.com']
-  spec.summary       = %q{Add Destructor callback for Ruby class instances}
-  spec.description   = %q{Add finalize method callback for Ruby instances on class definition}
+  spec.summary       = 'Add Destructor callback for Ruby class instances'
+  spec.description   = 'Add finalize method callback for Ruby instances on class definition'
   spec.homepage      = 'https://github.com/adamluzsi/ruby-destructor'
   spec.license       = 'MIT'
 
@@ -21,5 +21,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.6'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
-
 end

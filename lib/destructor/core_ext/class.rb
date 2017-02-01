@@ -1,15 +1,20 @@
-module Destructor::CoreExt::Class
+#
+module Destructor
+  #
+  module CoreExt
+    #
+    module Class
 
-  def new(*args,&block)
+      def new(*args, &block)
+        object = super
 
-    object = super
+        if object.respond_to?(:finalize)
+          ::ObjectSpace.define_finalizer(object, proc { object.__send__(:finalize) })
+        end
 
-    if object.respond_to?(:finalize)
-      ::ObjectSpace.define_finalizer( object, proc { object.__send__(:finalize) } )
+        object
+      end
+
     end
-
-    return object
-
   end
-
 end
